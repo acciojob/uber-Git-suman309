@@ -1,16 +1,20 @@
 package com.driver.model;
 
+import lombok.AccessLevel;
+import lombok.experimental.FieldDefaults;
+
 import javax.persistence.*;
 
 @Entity
 @Table(name="admin")
+@FieldDefaults(level = AccessLevel.PRIVATE)
 public class Admin{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private  int adminId;
+      int adminId;
 
-    private String username;
-    private String password;
+     String username;
+     String password;
 
     public Admin() {
     }
